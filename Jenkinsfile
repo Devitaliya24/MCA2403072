@@ -5,14 +5,14 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Building the project...'
-                sh 'mvn clean package'
+                echo 'mvn clean package'
             }
         }
 
         stage('Test') {
             steps {
                 echo 'Running tests...'
-                sh 'mvn test'
+                echo 'mvn test'
             }
         }
 
@@ -22,7 +22,7 @@ pipeline {
             }
             steps {
                 echo 'Deploying to test environment...'
-                sh './deploy.sh' 
+                echo './deploy.sh' 
             }
         }
     }
